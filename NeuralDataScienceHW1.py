@@ -1,6 +1,6 @@
 
 # TODO
-# Add user input along with adding comments
+# Add comments
 
 # A
 def sum_two_numbers(a, b):
@@ -63,9 +63,8 @@ if __name__ == '__main__':
 
     # D Tests
     assert remove_duplicates_from_list(["a", "a", "ab", "b", "c", "c", "c"]) == ["a", "ab", "b", "c"], "Test D1 Failed"
-    assert remove_duplicates_from_list([]) == [], "Test D2 Failed"
-    assert remove_duplicates_from_list([1]) == [1], "Test D3 Failed"
-
+    assert remove_duplicates_from_list([1]) == [1], "Test D2 Failed"
+    assert remove_duplicates_from_list([]) == [], "Test D3 Failed"
 
     # E Tests
     assert fibonacci(0) == 0, "Test E1 Failed"
@@ -75,4 +74,29 @@ if __name__ == '__main__':
     assert fibonacci(35) == 9227465, "Test E5 Failed"
 
     # Get User input and enter them into the previously tested functions
-    input("Enter in 2 numbers")
+
+    # Input for A
+    user_input = input("Problem A)   Enter in 2 numbers\n")
+    n1, n2 = user_input.split()
+    n1 = int(n1)
+    n2 = int(n2)
+    print(f"The sum of {n1} and {n2} numbers is", sum_two_numbers(n1, n2))
+
+    # Input for B
+    user_input = input("Problem B)   Enter in number of seconds\n")
+    seconds = int(user_input)
+    print(f"The hh:mm:ss format of {seconds} is", seconds_to_hms_format(seconds))
+
+    # Input for C
+    user_input = input("Problem C)   Enter in a string\n")
+    print_even_index_from_string(user_input)
+    
+    # Input for D
+    user_input = input("Problem D)   Enter in a list (each value separated by a space)\n")
+    arr = [x for x in user_input.split(" ")]
+    print(f"List content after duplicate removal from {arr} is", remove_duplicates_from_list(arr))
+
+    # Input for E
+    user_input = input("Problem E)   Enter in a number for fibonacci\n")
+    fib_num = int(user_input)
+    print(f"Fibonacci sequence for {fib_num} is", fibonacci(fib_num))
